@@ -1,0 +1,275 @@
+@import url("https://use.typekit.net/whl0upr.css");
+
+:root {
+  --black: #141414;
+  --dk-green: #095540;
+  --dk-blue: #0033A1;
+  --lt-yellow: #DAC62F;
+  --dk-pink: #A20F5E;
+}
+
+.App {
+  font-size: 13pt;
+  font-weight: 300;
+  font-style: normal;
+  max-width: 100vw;
+}
+
+body {
+  font-family: monarcha, serif;
+  background-color: var(--dk-green);
+}
+
+.container-fluid, .container {
+  padding: 0rem !important;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  background-color: var(--dk-green);
+  padding: 0.75rem 1.5rem;
+  color: white;
+  max-width: 100vw;
+  position: sticky; 
+  top: 0; 
+  z-index: 100;
+}
+
+.header h3 {
+  margin-right: 4rem;
+  margin-bottom: 0rem;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.searchbar p {
+  margin-bottom: 0rem;
+  margin-right: 1rem;
+}
+
+.searchbar input {
+  width: 30vw;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+h1 {
+  color: white;
+  font-family: monarcha, serif;
+  font-weight: 400;
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: monarcha, serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  font-family: monarcha, serif;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.header a:hover {
+  color: var(--lt-yellow);
+}
+
+.btn-1, .btn-1:disabled {
+  color: white;
+  background-color: var(--dk-pink);
+  border: 2px solid var(--dk-pink);
+  border-radius: 0.2rem;
+  padding: 5px 20px;
+  transition-duration: 0.4s;
+}
+
+.btn-2 {
+  color: var(--black);
+  background-color: var(--lt-yellow);
+  border: 2px solid var(--lt-yellow);
+  border-radius: 0.2rem;
+  padding: 5px 20px;
+  margin-left: 1rem;
+  outline: 0;
+}
+
+.btn-1:hover, .btn-2:hover, .btn-1:focus, .btn-2:focus  {
+  border: 2px solid var(--dk-blue);
+}
+
+input {
+  color: white;
+  border: 2px solid var(--lt-yellow);
+  background-color: var(--dk-green);
+  border-radius: 0.2rem;
+  padding-left: 2.25rem;
+}
+
+input::placeholder {
+  color: var(--lt-yellow);
+}
+
+input:focus,
+select:focus,
+button:focus {
+    outline: 0 !important;
+    box-shadow: none;
+}
+
+.recipe-card {
+  background-color: white;
+  color: var(--dk-blue);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+  border: 3px solid var(--dk-green);
+}
+
+.dark-bkg {
+  color: white;
+  padding: 5rem 8rem;
+}
+
+.pink {
+  background-color: var(--dk-pink);
+}
+
+.blue {
+  background-color: var(--dk-blue);
+}
+
+.green {
+  background-color: var(--dk-green);
+}
+
+.yellow {
+  color: var(--black);
+  background-color: var(--lt-yellow);
+}
+
+.green .recipe-card {
+  border: 3px solid var(--dk-pink);
+}
+
+.search-card {
+  background-color: var(--lt-yellow);
+  color: var(--black);
+  text-align: center;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  min-width: 8rem;
+  max-width: 20rem;
+}
+
+.search-card:hover {
+  color: var(--dk-green);
+  border: 0.2rem solid var(--dk-pink);
+  padding: 0.8rem;
+  text-decoration: none;
+}
+
+.search-card p {
+  margin-bottom: 0rem;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li span {
+  padding-left: 0.5rem;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.ingredients {
+  display: flex;
+}
+
+.ingredients ul {
+  margin-right: 2rem;
+}
+
+/* bootstrap md breakpoint */
+@media only screen and (max-width: 768px) {
+
+ .dark-bkg {
+    padding: 5rem 3rem;
+  }
+
+ h1 {
+   font-size: 3.2rem;
+ }
+
+ h2 {
+   padding-top: 1rem;
+   font-size: 2.8rem;
+ }
+
+  .searchbar {
+    width: 100%;
+    order: 3;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .searchbar input {
+    width: 80vw;
+  }
+
+  .random-btn {
+    order: 2;
+    margin-left: auto;
+  }
+
+}
+
+/* bootstrap md breakpoint */
+@media only screen and (max-width: 500px) {
+  
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .dark-bkg {
+    padding: 2rem 2rem;
+  }
+
+  .searchbar input {
+    width: 58vw;
+  }
+
+  .ingredients ul {
+    margin-right: 1rem;
+  }
+
+  .recipe-card {
+    padding: 1.5rem 0.75rem;
+  }
+ 
+ }
