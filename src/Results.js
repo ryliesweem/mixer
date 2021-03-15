@@ -9,10 +9,10 @@ function Results(props) {
     const {term} = props
   
     return <div>
-      {recipes && recipes.length===0 && <div className="dark-bkg pink">
+      {recipes && recipes.length===0 && <div className="dark-bkg pink" style={{minHeight:'95vh'}}>
         No recipes found! Try another search.
       </div>}
-      {recipes && recipes.length>0 && <div className="dark-bkg pink">
+      {recipes && recipes.length>0 && <div className="dark-bkg pink" style={{minHeight:'95vh'}}>
         <Row>
           <Col>
             <h1>Recipes</h1>
