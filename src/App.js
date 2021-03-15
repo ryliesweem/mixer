@@ -10,13 +10,11 @@ import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-import RecipeCard from './RecipeCard';
 import HomePage from './HomePage';
+import Results from './Results';
 import ScrollToTop from './ScrollToTop';
 
 function Wrap() {
@@ -102,30 +100,5 @@ function Recipes(props) {
   const {recipes} = props
   const {term} = props
 
-  return <div>
-    {recipes && recipes.length===0 && <div className="dark-bkg pink">
-      No recipes found! Try another search.
-    </div>}
-    {recipes && recipes.length>0 && <div className="dark-bkg pink">
-      <Row>
-        <Col>
-          <h1>Recipes</h1>
-          {term && <div style={{color: 'white'}}>Showing results for: <strong>{term}</strong></div>}
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col>
-          {recipes.map(m=> 
-              <RecipeCard
-                name={m.strDrink}
-                instructions={m.strInstructions}
-                img={m.strDrinkThumb}
-                measurements={[m.strMeasure1, m.strMeasure2, m.strMeasure3, m.strMeasure4, m.strMeasure5, m.strMeasure6]}
-                ingredients={[m.strIngredient1, m.strIngredient2, m.strIngredient3, m.strIngredient4, m.strIngredient5, m.strIngredient6]}
-              />
-          )}
-        </Col>
-      </Row>
-    </div>}
-  </div>;
+  return <Results recipes={recipes} term={term} />;
 }

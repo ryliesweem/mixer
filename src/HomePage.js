@@ -10,9 +10,8 @@ import {ReactComponent as ReactLogo} from './drink.svg';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-import RecipeCard from './RecipeCard';
+import Results from './Results';
 import WeeklyDrink from "./WeeklyDrink";
 
 import { FaCocktail } from 'react-icons/fa';
@@ -38,8 +37,6 @@ function HomePage() {
             setTerm(props)
         } 
     }
-
-    console.log(recipes)
 
     return <Switch>
             <Route exact path="/">
@@ -75,7 +72,7 @@ function Categories(props) {
                 </div>
             </Row>
             <h4 style={{marginBottom: '2rem', marginTop: '4rem'}}>Search by spirit:</h4>
-            <Row>
+            <Row className="pb-3">
                 {categories.map(c=>{
                     const {Icon, name, label} = c
                     return <Link to='/ingredient' className="col search-card" onClick={()=> props.getRecipes(name)}>
@@ -93,27 +90,5 @@ function Ingredient(props) {
     const {recipes} = props
     const {term} = props
 
-    return <div>
-        {recipes && recipes.length>0 && <div className="dark-bkg pink">
-        <Row>
-            <Col>
-            <h1>Recipes</h1>
-            <div style={{color: 'white'}}>Showing results for: <strong>{term}</strong></div>
-            </Col>
-        </Row>
-        <Row className="mt-4">
-            <Col>
-            {recipes.map(m=> 
-                <RecipeCard
-                    name={m.strDrink}
-                    instructions={m.strInstructions}
-                    img={m.strDrinkThumb}
-                    measurements={[m.strMeasure1, m.strMeasure2, m.strMeasure3, m.strMeasure4, m.strMeasure5, m.strMeasure6]}
-                    ingredients={[m.strIngredient1, m.strIngredient2, m.strIngredient3, m.strIngredient4, m.strIngredient5, m.strIngredient6]}
-                />
-            )}
-            </Col>
-        </Row>
-        </div>}
-    </div>;
+    return <Results recipes={recipes} term={term} />;
 }
