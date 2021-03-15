@@ -73,9 +73,9 @@ function Categories(props) {
             </Row>
             <h4 style={{marginBottom: '2rem', marginTop: '4rem'}}>Search by spirit:</h4>
             <Row className="pb-3">
-                {categories.map(c=>{
+                {categories.map((c, i) =>{
                     const {Icon, name, label} = c
-                    return <Link to='/ingredient' className="col search-card" onClick={()=> props.getRecipes(name)}>
+                    return <Link to='/ingredient' key={i} className="col search-card" onClick={()=> props.getRecipes(name)}>
                     <h4><Icon /></h4>
                     <p>{label}</p>
                     </Link>
