@@ -22,6 +22,8 @@ body {
 
 .container-fluid, .container {
   padding: 0rem !important;
+  height: calc(100vh - 66px);
+  overflow: overlay;
 }
 
 .header {
@@ -173,8 +175,8 @@ button:focus {
   padding: 1rem;
   border-radius: 0.25rem;
   border: none;
-  min-width: 8rem;
-  max-width: 20rem;
+  min-width: 10rem;
+  max-width: 15rem;
 }
 
 .search-card:hover {
@@ -221,7 +223,7 @@ img {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--dk-green);
+  background: rgba(0, 0, 0, 0);
 }
 
 /* Handle */
@@ -237,9 +239,14 @@ img {
 
 /* bootstrap md breakpoint */
 @media only screen and (max-width: 768px) {
+  .container-fluid, .container {
+    padding: 0rem !important;
+    height: calc(100vh - 120px);
+    overflow: overlay;
+  }
 
  .dark-bkg {
-    padding: 5rem 3rem;
+    padding: 5rem 4rem;
   }
 
  h1 {
@@ -295,6 +302,10 @@ img {
 
   .recipe-card {
     padding: 1.5rem 0.75rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
   }
  
  }

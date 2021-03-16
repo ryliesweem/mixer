@@ -77,15 +77,17 @@ function App() {
             </button></Link>
           </div>
       </div>
-
-      <Switch>
-        <Route path="/recipes">
-          <Recipes recipes={recipes} term={term} />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      
+      <body>
+        <Switch>
+          <Route path="/recipes">
+            <Recipes recipes={recipes} term={term} />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </body>
       
     </>
   );

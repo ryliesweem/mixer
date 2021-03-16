@@ -1,3 +1,4 @@
+import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -8,7 +9,7 @@ function Results(props) {
     const {recipes} = props
     const {term} = props
   
-    return <div>
+    return <Container fluid>
       {recipes && recipes.length===0 && <div className="dark-bkg pink" style={{minHeight:'95vh'}}>
         No recipes found! Try another search.
       </div>}
@@ -33,7 +34,7 @@ function Results(props) {
           </Col>
         </Row>
       </div>}
-    </div>
+    </Container>
     
 }
 

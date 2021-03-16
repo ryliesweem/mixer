@@ -45,7 +45,7 @@ function HomePage() {
             <Route exact path="/ingredient">
                 <Ingredient recipes={recipes} term={term} />
             </Route>
-        </Switch> 
+        </Switch>
 }
 
 export default HomePage
